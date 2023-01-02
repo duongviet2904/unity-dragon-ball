@@ -23824,7 +23824,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: ab7a2b6d83c1e54479943b7160304296, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.03730723, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87592,6 +87592,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1350
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1487315657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487315659}
+  - component: {fileID: 1487315658}
+  m_Layer: 0
+  m_Name: PrefabGO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1487315658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487315657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130269a320bcbcf40aa666c5d9325978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particalDamaged: {fileID: 1898684937489766, guid: 961a18ac1f369de4a8067b4a12e569ed, type: 3}
+  players:
+  - {fileID: 1131641121752976, guid: e18204939ce78cb47bd5871b3fb99d36, type: 3}
+  - {fileID: 1559846158792958, guid: a837671d5c5a1e649833514772f8c45c, type: 3}
+  - {fileID: 1376058412625502, guid: b895d65c9a33e784f8178f9a6c37766b, type: 3}
+  - {fileID: 1044413295412336, guid: 01006cc51dd237c4cbf1ec95f97af93e, type: 3}
+  - {fileID: 1567465691581190, guid: ad7b7ba4e15016f4897b748ca5e028df, type: 3}
+  AIs:
+  - {fileID: 1792224723617478, guid: c9d882575dea8544f8328a0593c54974, type: 3}
+  - {fileID: 1991103719617734, guid: cb3966cb996187945a2017510dfd9f1b, type: 3}
+  - {fileID: 1840909823027670, guid: d64328b328ce61b4883b9a5ae1514462, type: 3}
+  - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
+  bulletGoku: {fileID: 1659243149977702, guid: 76d3c3d0bdc29234e90158123233e457, type: 3}
+  bulletBuu: {fileID: 1638863451351818, guid: 0404c44386bbc8a42b4b3d21d9c3914e, type: 3}
+  bulletFatBuu: {fileID: 1885920404509710, guid: 9fd23674e2e4d0e48bf8b73030c2366c, type: 3}
+  bulletSuperGoku: {fileID: 1553372753326660, guid: cb70baba2331429458b67c5cfe9828d6, type: 3}
+  bulletGotenk: {fileID: 1659243149977702, guid: 76d3c3d0bdc29234e90158123233e457, type: 3}
+--- !u!4 &1487315659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487315657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.44, y: -1.5895, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2871
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487649685
 GameObject:
   m_ObjectHideFlags: 3
@@ -92537,68 +92598,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2008
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1570195493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1570195495}
-  - component: {fileID: 1570195494}
-  m_Layer: 0
-  m_Name: PrefabGO
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1570195494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570195493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130269a320bcbcf40aa666c5d9325978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particalDamaged: {fileID: 1898684937489766, guid: 961a18ac1f369de4a8067b4a12e569ed, type: 3}
-  players:
-  - {fileID: 1131641121752976, guid: e18204939ce78cb47bd5871b3fb99d36, type: 3}
-  - {fileID: 1559846158792958, guid: a837671d5c5a1e649833514772f8c45c, type: 3}
-  - {fileID: 1376058412625502, guid: b895d65c9a33e784f8178f9a6c37766b, type: 3}
-  - {fileID: 1044413295412336, guid: 01006cc51dd237c4cbf1ec95f97af93e, type: 3}
-  - {fileID: 1567465691581190, guid: ad7b7ba4e15016f4897b748ca5e028df, type: 3}
-  AIs:
-  - {fileID: 1792224723617478, guid: c9d882575dea8544f8328a0593c54974, type: 3}
-  - {fileID: 1991103719617734, guid: cb3966cb996187945a2017510dfd9f1b, type: 3}
-  - {fileID: 1840909823027670, guid: d64328b328ce61b4883b9a5ae1514462, type: 3}
-  - {fileID: 1775572085634998, guid: 4d19b728c50f21f4881f37ba268d7123, type: 3}
-  - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
-  bulletGoku: {fileID: 1659243149977702, guid: 76d3c3d0bdc29234e90158123233e457, type: 3}
-  bulletBuu: {fileID: 1638863451351818, guid: 0404c44386bbc8a42b4b3d21d9c3914e, type: 3}
-  bulletFatBuu: {fileID: 1885920404509710, guid: 9fd23674e2e4d0e48bf8b73030c2366c, type: 3}
-  bulletSuperGoku: {fileID: 1553372753326660, guid: cb70baba2331429458b67c5cfe9828d6, type: 3}
-  bulletGotenk: {fileID: 1659243149977702, guid: 76d3c3d0bdc29234e90158123233e457, type: 3}
---- !u!4 &1570195495
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570195493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.44, y: -1.5895, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2871
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570870058
 GameObject:
@@ -98926,7 +98925,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1665686006
 RectTransform:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XXX.UI.Popup;
 
@@ -81,7 +82,9 @@ public class GameManager : MonoBehaviour
 
 	private void InitAI ()
 	{
-		var AI = Random.Range(0, 4);
+		var index = SceneManager.GetActiveScene().name.Substring(5);
+		//Debug.Log(index);
+		var AI = int.Parse(index) -1;
 		GameObject aiPrefab = prefabScript.AIs [AI];
 		Instantiate (aiPrefab, posAI.position, Quaternion.identity);
 	}

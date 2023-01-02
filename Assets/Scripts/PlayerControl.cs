@@ -190,6 +190,7 @@ public class PlayerControl : MonoBehaviour
 	public void GameOver()
 	{
 		BasePopupManager.Instance.ShowPopupLose();
+		GameManager.GetIntance().state = GameState.Pause;
 		//Time.timeScale = 0;
 		//resetGame();
 	}

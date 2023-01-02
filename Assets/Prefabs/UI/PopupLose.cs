@@ -11,7 +11,7 @@ public class PopupLose : BasePopup
     //public Button btn_nextLevel;
     public override void Initialized(object data = null)
     {
-        
+
         base.Initialized(data);
         StartCoroutine(WaitShowMenu());
        // btn_nextLevel.onClick.RemoveAllListeners();
@@ -30,5 +30,6 @@ public class PopupLose : BasePopup
         yield return new WaitForSeconds(1);
         Close();
         SceneManager.LoadScene("Menu");
+
     }
 }

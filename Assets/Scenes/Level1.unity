@@ -49423,7 +49423,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: ab7a2b6d83c1e54479943b7160304296, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.17111328, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116890,7 +116890,6 @@ MonoBehaviour:
   - {fileID: 1792224723617478, guid: c9d882575dea8544f8328a0593c54974, type: 3}
   - {fileID: 1991103719617734, guid: cb3966cb996187945a2017510dfd9f1b, type: 3}
   - {fileID: 1840909823027670, guid: d64328b328ce61b4883b9a5ae1514462, type: 3}
-  - {fileID: 1775572085634998, guid: 4d19b728c50f21f4881f37ba268d7123, type: 3}
   - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
   bulletGoku: {fileID: 1659243149977702, guid: 76d3c3d0bdc29234e90158123233e457, type: 3}
   bulletBuu: {fileID: 1638863451351818, guid: 0404c44386bbc8a42b4b3d21d9c3914e, type: 3}
