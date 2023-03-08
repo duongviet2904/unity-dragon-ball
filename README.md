@@ -1,5 +1,3 @@
-# Hieu_Game
-
 
 
 ## Getting started
