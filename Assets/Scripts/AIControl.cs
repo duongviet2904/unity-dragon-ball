@@ -22,10 +22,10 @@ public class AIControl : MonoBehaviour
 	[Header ("speed")]
 	public float speedMove = 5, speedJump = 26;
 	[Header ("damagedHealthy")]
-	public int damagedHit = 10;
-	public int damagedKick = 10;
-	public int damagedKick2 = 15;
-	public int damagedSuperHit = 40;
+	public int damagedHit = 5;
+	public int damagedKick = 5;
+	public int damagedKick2 = 10;
+	public int damagedSuperHit = 30;
 	public int damagedShoot = 5;
 	[Header ("power")]
 	public int power = 100;
@@ -93,9 +93,9 @@ public class AIControl : MonoBehaviour
 		}
 		if (!isDamaged) {
 			//kiem tra khoang cach de chon state close hoac normal
-			CheckDistance ();
-			//goi state
-			State ();
+			//CheckDistance ();
+			////goi state
+			//State ();
 
 			//dua vao state de attack hoac move
 			AIManager ();
@@ -156,61 +156,67 @@ public class AIControl : MonoBehaviour
 	private float timerAttack;
 	public float timeAttack = 2f;
 
-	private void AIManager ()
+	private void AIManager()
 	{
-//		if (initAI) {
-//			state = AIState.Reset;
-//			float rand = Random.value;
-//			if (rand > 0.5f) {
-//				//move
-//				Movement ();
-//			} else {
-//				//attack
-//				timerAttack += Time.deltaTime;
-//				if (timerAttack > timeAttack) {
-//					Attack ();
-//					timerAttack = 0;
-//				}
-//			}
-//
-//		}
-		float rand = Random.value;
-		switch (initAI) {
-		//normal
-		case 0:
+		float distancePE = Vector3.Distance(transform.position, playerScript.transform.position);
+		if (distancePE > 9)
+		{
+			if (curPowerEnemy < powerHit && curPowerEnemy < powerShoot)
 			{
-				if (rand > 0.5f) {
-					//move
-					Movement ();
-				} else {
-					//attack
-					timerAttack += Time.deltaTime;
-					if (timerAttack > timeAttack) {
-						if (rand < 0.25f)
-							Attack ();
-						else
-							SpecicalAttack ();
-						timerAttack = 0;
+				float rand = Random.value;
+				if (rand > 0.5)
+				{
+					ani.SetTrigger("flash");
+					rib.velocity = transform.position.x < playerScript.gameObject.transform.position.x
+						? new Vector2(15, 0) : new Vector2(-15, 0);
+				}
+				else
+				{
+					Movement();
+				}
+			}
+			else
+			{
+				float rand = Random.value;
+				if (rand > 0.5)
+				{
+					CheckRotation();
+					SpecicalAttack();
+				}
+				else
+				{
+					Movement();
+				}
+			}
+		}
+		else
+		{
+			timerAttack += Time.deltaTime;
+			if (timerAttack > timeAttack)
+			{
+				CheckRotation();
+				timerAttack = 0;
+				float rand = Random.value;
+				if (rand > 0.3)
+				{
+                    if (curPowerEnemy < powerHit && curPowerEnemy < powerShoot)
+					{
+						SpecicalAttack();
 					}
+					else
+					{
+                        Attack();
+                    }
+                        
 				}
+				else
+				{
+                    ani.SetTrigger("flash");
+                    rib.velocity = transform.position.x < playerScript.gameObject.transform.position.x
+                        ? new Vector2(distancePE + 2, 0) : new Vector2(distancePE *(-1) - 2, 0);
+                    Attack();
+                }
 			}
-			break;	
-		//attack
-		case 1:
-			{
-				timerAttack += Time.deltaTime;
-				if (timerAttack > timeAttack) {
-					Attack ();
-					timerAttack = 0;
-				}
-			}
-			break;
-		//stop
-		case 2:
-			{
-				SpecicalAttack ();
-			}
-			break;
 		}
 
 	}
@@ -266,32 +272,11 @@ public class AIControl : MonoBehaviour
 
 	private void Attack ()
 	{
-		int randAttack = Random.Range (0, 3);
-		switch (randAttack) {
-		case 0:
-			{
-				ani.SetTrigger ("hit");
-				rib.velocity = Vector2.zero;
-				rib.velocity = transform.position.x < playerScript.gameObject.transform.position.x 
-					? new Vector2 (10, 0) : new Vector2 (-10, 0);
-			}
-			break;
-		case 1:
-			{
-				ani.SetTrigger ("kick");
-				rib.velocity = Vector2.zero;
-				rib.velocity = transform.position.x < playerScript.gameObject.transform.position.x 
-					? new Vector2 (10, 0) : new Vector2 (-10, 0);
-			}
-			break;
-//		case 2:
-//			if (curPower >= powerHit) {
-//				curPower -= powerHit;
-//				ani.SetTrigger ("super");
-//			}
-//			break;
-		}
-	}
+        ani.SetTrigger("hit");
+        rib.velocity = Vector2.zero;
+        rib.velocity = transform.position.x < playerScript.gameObject.transform.position.x
+            ? new Vector2(10, 0) : new Vector2(-10, 0);
+    }
 
 	public bool isUsingSkillSpecial;
 
@@ -330,17 +315,21 @@ public class AIControl : MonoBehaviour
 		// ani.SetFloat ("timePress", timePress);
 	}
 
-	private void Movement ()
+	private void Movement()
 	{
-		if (!isUsingSkillSpecial && !isDamaged) {
+		if (!isUsingSkillSpecial && !isDamaged)
+		{
 			speed = 1;
-			CheckRotation ();
-			if (transform.position.x > playerScript.transform.position.x + distanceAtt) {
-				transform.Translate (-Vector2.right * moveSpeed * Time.deltaTime);
-			} else if (transform.position.x < playerScript.transform.position.x - distanceAtt) {
-				transform.Translate (Vector2.right * moveSpeed * Time.deltaTime);
-			}
-		
+			CheckRotation();
+			Vector2 target = new Vector2(playerScript.transform.position.x, rib.position.y);
+			Vector2 newPos = Vector2.MoveTowards(rib.position, target, moveSpeed * Time.fixedDeltaTime);
+			rib.MovePosition(newPos);
+			// if (transform.position.x > playerScript.transform.position.x + distanceAtt) {
+			// 	transform.Translate (-Vector2.right * moveSpeed * Time.deltaTime);
+			// } else if (transform.position.x < playerScript.transform.position.x - distanceAtt) {
+			// 	transform.Translate (Vector2.right * moveSpeed * Time.deltaTime);
+			// }
+
 		}
 	}
 
@@ -355,7 +344,7 @@ public class AIControl : MonoBehaviour
 
 	public float jumpSpeed = 28;
 
-	private void Jump (float velocityX)
+	public void Jump (float velocityX)
 	{
 		ani.SetTrigger ("jump");
 		isJumping = true;
@@ -467,7 +456,7 @@ public class AIControl : MonoBehaviour
 				gameManager.UpdateHealthyEnemy (ref curHealthyEnemy, ref damagedHit,ref playerScript.curPower, playerScript.power, 1);
 			
 			} 
-			if (other.gameObject.tag == "kickP") {
+			if (other.gameObject.CompareTag("kickP")) {
 				isDamaged = true;
 				damagedRate = 0.5f;
 				CreateEffectDamaged (0.5f, 1f);
@@ -483,7 +472,7 @@ public class AIControl : MonoBehaviour
 				gameManager.UpdateHealthyEnemy (ref curHealthyEnemy, ref damagedSuperHit,ref playerScript.curPower, playerScript.power, 1);
 
 			}
-			if (other.gameObject.name == "kick2") {
+			if (other.gameObject.tag == "kick2P") {
 				isDamaged = true;
 				damagedRate = 0.6f;
 				CreateEffectDamaged (1f, 1f);
@@ -492,14 +481,15 @@ public class AIControl : MonoBehaviour
 
 			}
 
-			if (other.gameObject.tag == "bulletPlayer") {
+			if (other.gameObject.CompareTag("bulletPlayer")){
 				isDamaged = true;
 				damagedRate = 1f;
 				gameManager.UpdateHealthyEnemy (ref curHealthyEnemy, ref damagedKick2,ref playerScript.curPower, playerScript.power, 0);
 				Destroy (other.gameObject);
 				CreateEffectDamaged (0.5f, 1f);
 			}
-		}
+
+        }
 
 	}
 

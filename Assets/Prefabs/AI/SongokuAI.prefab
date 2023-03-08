@@ -411,6 +411,7 @@ Transform:
   - {fileID: 4949883015446494}
   - {fileID: 4407193727130982}
   - {fileID: 4576197545804856}
+  - {fileID: 2822833497296403298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -572,11 +573,11 @@ MonoBehaviour:
   healthy: 100
   speedMove: 5
   speedJump: 26
-  damagedHit: 5
+  damagedHit: 3
   damagedKick: 5
-  damagedKick2: 10
+  damagedKick2: 7
   damagedSuperHit: 30
-  damagedShoot: 5
+  damagedShoot: 3
   power: 100
   powerHit: 60
   powerShoot: 40
@@ -592,3 +593,34 @@ MonoBehaviour:
   isUsingSkillSpecial: 0
   isDamaged: 0
   jumpSpeed: 10
+--- !u!1 &3093061152777037464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2822833497296403298}
+  m_Layer: 0
+  m_Name: posCallBullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2822833497296403298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093061152777037464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.264, y: 0.252, z: 2.8201244}
+  m_LocalScale: {x: 0.2702703, y: 0.2702703, z: 0.35251555}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4321635257451120}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

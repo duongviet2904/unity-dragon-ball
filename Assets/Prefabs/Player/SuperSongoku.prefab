@@ -178,11 +178,11 @@ MonoBehaviour:
   healthy: 100
   speedMove: 5
   speedJump: 26
-  damagedHit: 10
-  damagedKick: 10
-  damagedKick2: 15
-  damagedSuperHit: 40
-  damagedShoot: 5
+  damagedHit: 2
+  damagedKick: 4
+  damagedKick2: 6
+  damagedSuperHit: 15
+  damagedShoot: 2
   power: 100
   powerHit: 60
   powerShoot: 40
@@ -584,7 +584,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

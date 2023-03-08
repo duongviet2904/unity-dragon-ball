@@ -87629,9 +87629,9 @@ MonoBehaviour:
   - {fileID: 1044413295412336, guid: 01006cc51dd237c4cbf1ec95f97af93e, type: 3}
   - {fileID: 1567465691581190, guid: ad7b7ba4e15016f4897b748ca5e028df, type: 3}
   AIs:
-  - {fileID: 1792224723617478, guid: c9d882575dea8544f8328a0593c54974, type: 3}
-  - {fileID: 1991103719617734, guid: cb3966cb996187945a2017510dfd9f1b, type: 3}
-  - {fileID: 1840909823027670, guid: d64328b328ce61b4883b9a5ae1514462, type: 3}
+  - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
+  - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
+  - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
   - {fileID: 1786716909601466, guid: 720976eed7379e6488cdb5f40acde174, type: 3}
   bulletGoku: {fileID: 1659243149977702, guid: 76d3c3d0bdc29234e90158123233e457, type: 3}
   bulletBuu: {fileID: 1638863451351818, guid: 0404c44386bbc8a42b4b3d21d9c3914e, type: 3}

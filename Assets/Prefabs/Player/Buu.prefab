@@ -339,11 +339,11 @@ MonoBehaviour:
   healthy: 100
   speedMove: 5
   speedJump: 26
-  damagedHit: 10
-  damagedKick: 10
-  damagedKick2: 15
-  damagedSuperHit: 40
-  damagedShoot: 5
+  damagedHit: 2
+  damagedKick: 4
+  damagedKick2: 6
+  damagedSuperHit: 15
+  damagedShoot: 2
   power: 100
   powerHit: 60
   powerShoot: 40
@@ -351,6 +351,7 @@ MonoBehaviour:
   curPower: 0
   isDamaged: 0
   isFinshFlash: 0
+  gameOverObj: {fileID: 0}
 --- !u!114 &114077193430301400
 MonoBehaviour:
   m_ObjectHideFlags: 0

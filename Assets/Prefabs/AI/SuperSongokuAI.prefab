@@ -510,11 +510,11 @@ MonoBehaviour:
   healthy: 100
   speedMove: 5
   speedJump: 20
-  damagedHit: 5
-  damagedKick: 8
-  damagedKick2: 12
-  damagedSuperHit: 35
-  damagedShoot: 5
+  damagedHit: 2
+  damagedKick: 4
+  damagedKick2: 6
+  damagedSuperHit: 15
+  damagedShoot: 2
   power: 100
   powerHit: 60
   powerShoot: 40

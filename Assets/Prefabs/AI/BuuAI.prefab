@@ -611,11 +611,11 @@ MonoBehaviour:
   healthy: 100
   speedMove: 5
   speedJump: 26
-  damagedHit: 5
-  damagedKick: 5
-  damagedKick2: 10
-  damagedSuperHit: 30
-  damagedShoot: 5
+  damagedHit: 2
+  damagedKick: 4
+  damagedKick2: 6
+  damagedSuperHit: 20
+  damagedShoot: 2
   power: 100
   powerHit: 60
   powerShoot: 40
@@ -623,7 +623,7 @@ MonoBehaviour:
   closeRate: 0.5
   stopRate: 3
   lifeRateAI: 4.08
-  distanceAtt: 3
+  distanceAtt: 2
   curHealthyEnemy: 0
   curPowerEnemy: 0
   moveSpeed: 4

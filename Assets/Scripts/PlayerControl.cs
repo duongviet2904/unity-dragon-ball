@@ -61,8 +61,7 @@ public class PlayerControl : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		
-		statePlayer = StatePlayer.Normal; // khởi tạo trạng thái ban đầu cho quái 
+		statePlayer = StatePlayer.Normal; // khởi tạo trạng thái ban đầu cho nhân vật 
 		rib = GetComponent<Rigidbody2D> ();
 		ani = GetComponent<Animator> ();
 
@@ -73,8 +72,6 @@ public class PlayerControl : MonoBehaviour
 		curHealthy = healthy;
 		curPower = power;
 		gameManager = GameManager.GetIntance ();
-	
-
 	}
 	
 	// Update is called once per frame
@@ -109,7 +106,8 @@ public class PlayerControl : MonoBehaviour
 			if (isGround) {
 				transform.localScale = new Vector3 (scaleX, scaleY, 0);
 			}
-		} else if ((horizontal < 0 || (kick && transform.localScale.x < 0) || (hit && transform.localScale.x < 0)) && !isFinshFlash) {
+		} 
+		else if ((horizontal < 0 || (kick && transform.localScale.x < 0) || (hit && transform.localScale.x < 0)) && !isFinshFlash) {
 			transform.Translate (-Vector2.right * speedMove * Time.deltaTime);
 			if (isGround) {
 				transform.localScale = new Vector3 (-scaleX, scaleY, 0);
@@ -122,7 +120,6 @@ public class PlayerControl : MonoBehaviour
 			Jump (speedJump);
 			jump = false;
 		}
-
 	}
 
 	//flash
@@ -217,14 +214,37 @@ public class PlayerControl : MonoBehaviour
 			countHit = 0;
 		}
 		//kick
-		if (Input.GetKeyDown (KeyCode.K) && isGround) {
+		/*if (Input.GetKeyDown (KeyCode.K) && isGround) {
 			kick = true;
 			ani.SetTrigger ("kick");
 			timeKick = 0;
 		}
-		Delay (ref kick, ref timeKick);
-		//super hit
-		if (Input.GetKeyDown (KeyCode.I) && isGround) {
+		Delay (ref kick, ref timeKick);*/
+
+        if (Input.GetKeyDown(KeyCode.K) && isGround)
+        {
+            if (timeHit > 0 && countHit == 1)
+            {
+                ani.SetFloat("timeHit", 0.6f);
+            }
+            else
+            {
+                ani.SetTrigger("kick");
+                ani.SetFloat("timeHit", 0f);
+                timeHit = 0.5f;
+                countHit += 1;
+            }
+        }
+        if (timeHit > 0)
+        {
+            timeHit -= Time.deltaTime;
+        }
+        else
+        {
+            countHit = 0;
+        }
+        //super hit
+        if (Input.GetKeyDown (KeyCode.I) && isGround) {
 			if (curPower >= powerHit) {
 				curPower = curPower - powerHit;
 				ani.SetTrigger ("superHit");
@@ -239,6 +259,7 @@ public class PlayerControl : MonoBehaviour
 				ani.SetTrigger ("shoot");
 				//update slider
 				gameManager.UpdatePower (curPower);
+			
 			}
 		}
 		if(curHealthy <= 0)

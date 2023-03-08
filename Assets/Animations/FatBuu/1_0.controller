@@ -623,9 +623,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: superHit
     m_EventTreshold: 0
-  - m_ConditionMode: 3
-    m_ConditionEvent: power
-    m_EventTreshold: 40
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102874495158695248}
   m_Solo: 0

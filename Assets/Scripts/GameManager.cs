@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 	private void InitPlayer ()
 	{
 		if (MenuControll.GetIntance () != null) {
-			Debug.Log(MenuControll.indexChara);
+			//Debug.Log(MenuControll.indexChara);
 			Instantiate(prefabScript.players[MenuControll.indexChara], posPlayer.position, Quaternion.identity);
 		}
 	}
